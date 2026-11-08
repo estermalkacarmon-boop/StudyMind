@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudyMind.MainPage"
+              BackgroundColor="#F4F5FA">
+
+
+
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="20"
+            VerticalOptions="Center">
+
+            <Label
+                Text="StudyMind"
+                FontSize="34"
+                FontAttributes="Bold"
+                TextColor="#3446A5"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="לומדים חכם יותר"
+                FontSize="20"
+                HorizontalOptions="Center"
+                TextColor="#444444"/>
+
+            <Label
+                Text="ברוכים הבאים לעוזר הלמידה האישי שלכם!"
+                FontSize="16"
+                HorizontalOptions="Center"
+                TextColor="#666666"
+                HorizontalTextAlignment="Center"/>
+
+            <Button
+                Text="בואו נתחיל ללמוד"
+                BackgroundColor="#5266D5"
+                TextColor="White"
+                CornerRadius="15"
+                HeightRequest="55"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
