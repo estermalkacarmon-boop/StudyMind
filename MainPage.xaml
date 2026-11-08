@@ -35,6 +35,7 @@
 
             <Button
                 Text="בואו נתחיל ללמוד"
+                Clicked="OnStartClicked"
                 BackgroundColor="#5266D5"
                 TextColor="White"
                 CornerRadius="15"

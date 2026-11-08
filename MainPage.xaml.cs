@@ -7,5 +7,10 @@ namespace StudyMind
         {
             InitializeComponent();
         }
+
+        private async void OnStartClicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("StudyMind", "בואו נתחיל ללמוד!", "יאללה");
+        }
     }
 }
