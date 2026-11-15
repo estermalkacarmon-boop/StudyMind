@@ -3,29 +3,269 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="StudyMind.SubjectsPage"
-    Title="בחירת מקצוע"
-    BackgroundColor="#F4F5FA">
+    Title="בחירת מקצועות"
+    BackgroundColor="#F4F5FA"
+    FlowDirection="RightToLeft">
 
-    <VerticalStackLayout Padding="25" Spacing="20">
+    <ScrollView>
+        <VerticalStackLayout Padding="24,30" Spacing="22">
 
-        <Label
-            Text="בואו נלמד!"
-            FontSize="32"
-            FontAttributes="Bold"
-            TextColor="#3446A5"
-            HorizontalOptions="Center"/>
+            <!-- כותרת עליונה -->
+            <VerticalStackLayout Spacing="9">
 
-        <Label
-            Text="בחרו את מקצוע הלימוד שלכם"
-            FontSize="18"
-            HorizontalOptions="Center"/>
+                <Label
+                    Text="בונים את הדרך שלך להצלחה"
+                    FontSize="14"
+                    TextColor="#737DAF"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start"/>
 
-        <Button Text="מתמטיקה"/>
-        <Button Text="אנגלית"/>
-        <Button Text="היסטוריה"/>
-        <Button Text="תנ״ך"/>
-        <Button Text="אזרחות"/>
+                <Label
+                    Text="מה לומדים היום?"
+                    FontSize="32"
+                    FontAttributes="Bold"
+                    TextColor="#293477"
+                    HorizontalOptions="Start"/>
 
-    </VerticalStackLayout>
+                <Label
+                    Text="בחרי את מקצועות הלימוד שלך, ונבנה עבורך חוויית למידה שמתאימה בדיוק לצרכים שלך."
+                    FontSize="15"
+                    TextColor="#777D94"
+                    LineHeight="1.35"/>
+            </VerticalStackLayout>
 
+            <!-- כרטיס בחירת מקצועות -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#E9EAF2"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 24"
+                Padding="20">
+
+                <VerticalStackLayout Spacing="17">
+
+                    <Grid ColumnDefinitions="*,Auto">
+
+                        <VerticalStackLayout Spacing="4">
+                            <Label
+                                Text="מקצועות הלימוד"
+                                FontSize="19"
+                                FontAttributes="Bold"
+                                TextColor="#293477"/>
+
+                            <Label
+                                Text="אפשר לבחור יותר ממקצוע אחד"
+                                FontSize="13"
+                                TextColor="#9297AA"/>
+                        </VerticalStackLayout>
+
+                        <Border
+                            Grid.Column="1"
+                            BackgroundColor="#EEF0FF"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 12"
+                            Padding="12,7"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="לבחירה"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="#5266D5"/>
+                        </Border>
+
+                    </Grid>
+
+                    <BoxView
+                        HeightRequest="1"
+                        Color="#ECEEF5"/>
+
+                    <!-- מתמטיקה -->
+                    <Border
+                        BackgroundColor="#F8F9FF"
+                        Stroke="#EAECF8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="13">
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="13">
+                            <CheckBox
+                                x:Name="MathCheckBox"
+                                Color="#5266D5"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                Spacing="3">
+
+                                <Label
+                                    Text="מתמטיקה"
+                                    FontSize="17"
+                                    FontAttributes="Bold"
+                                    TextColor="#30385F"/>
+
+                                <Label
+                                    Text="חשיבה, פתרון בעיות ותרגול"
+                                    FontSize="12"
+                                    TextColor="#9297AA"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- אנגלית -->
+                    <Border
+                        BackgroundColor="#F8F9FF"
+                        Stroke="#EAECF8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="13">
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="13">
+                            <CheckBox
+                                x:Name="EnglishCheckBox"
+                                Color="#5266D5"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                Spacing="3">
+
+                                <Label
+                                    Text="אנגלית"
+                                    FontSize="17"
+                                    FontAttributes="Bold"
+                                    TextColor="#30385F"/>
+
+                                <Label
+                                    Text="קריאה, כתיבה והבנת הנקרא"
+                                    FontSize="12"
+                                    TextColor="#9297AA"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- היסטוריה -->
+                    <Border
+                        BackgroundColor="#F8F9FF"
+                        Stroke="#EAECF8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="13">
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="13">
+                            <CheckBox
+                                x:Name="HistoryCheckBox"
+                                Color="#5266D5"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                Spacing="3">
+
+                                <Label
+                                    Text="היסטוריה"
+                                    FontSize="17"
+                                    FontAttributes="Bold"
+                                    TextColor="#30385F"/>
+
+                                <Label
+                                    Text="אירועים, תקופות ותהליכים"
+                                    FontSize="12"
+                                    TextColor="#9297AA"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- תנ״ך -->
+                    <Border
+                        BackgroundColor="#F8F9FF"
+                        Stroke="#EAECF8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="13">
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="13">
+                            <CheckBox
+                                x:Name="BibleCheckBox"
+                                Color="#5266D5"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                Spacing="3">
+
+                                <Label
+                                    Text="תנ״ך"
+                                    FontSize="17"
+                                    FontAttributes="Bold"
+                                    TextColor="#30385F"/>
+
+                                <Label
+                                    Text="פרקים, פסוקים והעמקה"
+                                    FontSize="12"
+                                    TextColor="#9297AA"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- אזרחות -->
+                    <Border
+                        BackgroundColor="#F8F9FF"
+                        Stroke="#EAECF8"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 16"
+                        Padding="13">
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="13">
+                            <CheckBox
+                                x:Name="CivicsCheckBox"
+                                Color="#5266D5"
+                                VerticalOptions="Center"/>
+
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                Spacing="3">
+
+                                <Label
+                                    Text="אזרחות"
+                                    FontSize="17"
+                                    FontAttributes="Bold"
+                                    TextColor="#30385F"/>
+
+                                <Label
+                                    Text="מושגים, זכויות ועקרונות"
+                                    FontSize="12"
+                                    TextColor="#9297AA"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- כפתור המשך -->
+            <Button
+                Text="המשך להגדרת ההעדפות"
+                FontSize="16"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="#5266D5"
+                CornerRadius="17"
+                HeightRequest="58"
+                Clicked="OnContinueClicked"/>
+
+            <Label
+                Text="StudyMind  •  לומדים חכם יותר"
+                FontSize="12"
+                TextColor="#A0A4B6"
+                HorizontalOptions="Center"
+                Margin="0,0,0,12"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

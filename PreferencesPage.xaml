@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudyMind.PreferencesPage"
+    Title="העדפות למידה"
+    FlowDirection="RightToLeft"
+    BackgroundColor="#F4F5FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="22" Spacing="20">
+
+            <!-- כותרת -->
+            <VerticalStackLayout Spacing="7">
+                <Label
+                    Text="בואו נכיר את סגנון הלמידה שלכם"
+                    FontSize="27"
+                    FontAttributes="Bold"
+                    TextColor="#293477"/>
+
+                <Label
+                    Text="כמה שאלות קצרות שיעזרו לנו לבנות לכם תוכנית למידה אישית"
+                    FontSize="14"
+                    TextColor="#85899D"/>
+            </VerticalStackLayout>
+
+            <!-- 01: זמן לימוד יומי -->
+            <Border BackgroundColor="White" Stroke="#E8EAF5"
+                    StrokeThickness="1" Padding="19"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="13">
+                    <Label Text="01  |  זמן לימוד יומי"
+                           FontSize="19" FontAttributes="Bold"
+                           TextColor="#293477"/>
+                    <Label Text="כמה זמן תרצו להקדיש ללמידה בכל יום?"
+                           FontSize="14" TextColor="#85899D"/>
+                    <Label x:Name="HoursValueLabel"
+                           Text="2 שעות ביום" FontSize="22"
+                           FontAttributes="Bold" TextColor="#5266D5"
+                           HorizontalOptions="Center"/>
+                    <Slider x:Name="HoursSlider"
+                            Minimum="1" Maximum="6" Value="2"
+                            MinimumTrackColor="#5266D5"
+                            MaximumTrackColor="#E0E3F4"
+                            ThumbColor="#3446A5"
+                            ValueChanged="OnHoursChanged"/>
+                    <Grid ColumnDefinitions="*,*,*,*,*,*">
+                        <Label Grid.Column="0" Text="1" HorizontalTextAlignment="Center" TextColor="#85899D"/>
+                        <Label Grid.Column="1" Text="2" HorizontalTextAlignment="Center" TextColor="#85899D"/>
+                        <Label Grid.Column="2" Text="3" HorizontalTextAlignment="Center" TextColor="#85899D"/>
+                        <Label Grid.Column="3" Text="4" HorizontalTextAlignment="Center" TextColor="#85899D"/>
+                        <Label Grid.Column="4" Text="5" HorizontalTextAlignment="Center" TextColor="#85899D"/>
+                        <Label Grid.Column="5" Text="6" HorizontalTextAlignment="Center" TextColor="#85899D"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 02: זמן מועדף -->
+            <Border BackgroundColor="White" Stroke="#E8EAF5"
+                    StrokeThickness="1" Padding="19"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="02  |  זמן מועדף ללמידה"
+                           FontSize="19" FontAttributes="Bold"
+                           TextColor="#293477"/>
+                    <Label Text="באיזה חלק של היום הכי נוח לכם ללמוד?"
+                           FontSize="14" TextColor="#85899D"/>
+                    <RadioButton x:Name="MorningRadio" Content="בבוקר"
+                                 GroupName="PreferredTime" TextColor="#343A59"/>
+                    <RadioButton x:Name="NoonRadio" Content="בצהריים"
+                                 GroupName="PreferredTime" IsChecked="True"
+                                 TextColor="#343A59"/>
+                    <RadioButton x:Name="EveningRadio" Content="בערב"
+                                 GroupName="PreferredTime" TextColor="#343A59"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 03: סגנון למידה -->
+            <Border BackgroundColor="White" Stroke="#E8EAF5"
+                    StrokeThickness="1" Padding="19"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="03  |  סגנון הלמידה שלי"
+                           FontSize="19" FontAttributes="Bold"
+                           TextColor="#293477"/>
+                    <Label Text="איך אתם הכי אוהבים ללמוד?"
+                           FontSize="14" TextColor="#85899D"/>
+                    <RadioButton x:Name="ReadingRadio" Content="סיכומים וקריאה"
+                                 GroupName="LearningStyle" TextColor="#343A59"/>
+                    <RadioButton x:Name="VideosRadio" Content="סרטונים והסברים"
+                                 GroupName="LearningStyle" TextColor="#343A59"/>
+                    <RadioButton x:Name="PracticeRadio" Content="תרגול שאלות"
+                                 GroupName="LearningStyle" TextColor="#343A59"/>
+                    <RadioButton x:Name="CombinedRadio" Content="שילוב של כמה שיטות"
+                                 GroupName="LearningStyle" IsChecked="True"
+                                 TextColor="#343A59"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 04: יכולת ריכוז -->
+            <Border BackgroundColor="White" Stroke="#E8EAF5"
+                    StrokeThickness="1" Padding="19"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="04  |  יכולת ריכוז"
+                           FontSize="19" FontAttributes="Bold"
+                           TextColor="#293477"/>
+                    <Label Text="כמה זמן אתם מצליחים להתרכז ברצף?"
+                           FontSize="14" TextColor="#85899D"/>
+                    <RadioButton x:Name="Focus15Radio" Content="15–25 דקות"
+                                 GroupName="FocusDuration" TextColor="#343A59"/>
+                    <RadioButton x:Name="Focus30Radio" Content="30–45 דקות"
+                                 GroupName="FocusDuration" IsChecked="True"
+                                 TextColor="#343A59"/>
+                    <RadioButton x:Name="Focus45Radio" Content="45–60 דקות"
+                                 GroupName="FocusDuration" TextColor="#343A59"/>
+                    <RadioButton x:Name="Focus60Radio" Content="יותר משעה"
+                                 GroupName="FocusDuration" TextColor="#343A59"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 05: האתגר בלמידה -->
+            <Border BackgroundColor="White" Stroke="#E8EAF5"
+                    StrokeThickness="1" Padding="19"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="05  |  האתגר שלי בלמידה"
+                           FontSize="19" FontAttributes="Bold"
+                           TextColor="#293477"/>
+                    <Label Text="מה הכי קשה לכם בדרך כלל?"
+                           FontSize="14" TextColor="#85899D"/>
+                    <RadioButton x:Name="StartingRadio" Content="להתחיל ללמוד"
+                                 GroupName="MainChallenge" TextColor="#343A59"/>
+                    <RadioButton x:Name="ConcentrationRadio" Content="לשמור על ריכוז"
+                                 GroupName="MainChallenge" TextColor="#343A59"/>
+                    <RadioButton x:Name="UnderstandingRadio" Content="להבין את החומר"
+                                 GroupName="MainChallenge" IsChecked="True"
+                                 TextColor="#343A59"/>
+                    <RadioButton x:Name="MemoryRadio" Content="לזכור את החומר"
+                                 GroupName="MainChallenge" TextColor="#343A59"/>
+                    <RadioButton x:Name="TimeRadio" Content="לנהל את הזמן"
+                                 GroupName="MainChallenge" TextColor="#343A59"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 06: משך מקטע הלמידה -->
+            <Border BackgroundColor="White" Stroke="#E8EAF5"
+                    StrokeThickness="1" Padding="19"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="06  |  משך מקטע הלמידה"
+                           FontSize="19" FontAttributes="Bold"
+                           TextColor="#293477"/>
+                    <Label Text="כמה זמן תרצו ללמוד לפני הפסקה?"
+                           FontSize="14" TextColor="#85899D"/>
+                    <RadioButton x:Name="Session25Radio" Content="25 דקות"
+                                 GroupName="SessionLength" TextColor="#343A59"/>
+                    <RadioButton x:Name="Session45Radio" Content="45 דקות"
+                                 GroupName="SessionLength" IsChecked="True"
+                                 TextColor="#343A59"/>
+                    <RadioButton x:Name="Session60Radio" Content="60 דקות"
+                                 GroupName="SessionLength" TextColor="#343A59"/>
+                    <RadioButton x:Name="Session90Radio" Content="90 דקות"
+                                 GroupName="SessionLength" TextColor="#343A59"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 07: זמן הפסקה -->
+            <Border BackgroundColor="White" Stroke="#E8EAF5"
+                    StrokeThickness="1" Padding="19"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="07  |  זמן הפסקה"
+                           FontSize="19" FontAttributes="Bold"
+                           TextColor="#293477"/>
+                    <Label Text="כמה זמן מנוחה תרצו בין מקטעי הלמידה?"
+                           FontSize="14" TextColor="#85899D"/>
+                    <RadioButton x:Name="Break5Radio" Content="5 דקות"
+                                 GroupName="BreakLength" TextColor="#343A59"/>
+                    <RadioButton x:Name="Break10Radio" Content="10 דקות"
+                                 GroupName="BreakLength" IsChecked="True"
+                                 TextColor="#343A59"/>
+                    <RadioButton x:Name="Break15Radio" Content="15 דקות"
+                                 GroupName="BreakLength" TextColor="#343A59"/>
+                    <RadioButton x:Name="Break20Radio" Content="20 דקות"
+                                 GroupName="BreakLength" TextColor="#343A59"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- שמירה -->
+            <Button Text="שמירת ההעדפות"
+                    FontSize="18" FontAttributes="Bold"
+                    BackgroundColor="#4053B5"
+                    TextColor="White" CornerRadius="16"
+                    HeightRequest="58" Margin="0,4,0,15"
+                    Clicked="OnSaveClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

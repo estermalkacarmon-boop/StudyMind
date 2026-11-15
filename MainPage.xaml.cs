@@ -1,5 +1,4 @@
-﻿
-namespace StudyMind
+﻿namespace StudyMind
 {
     public partial class MainPage : ContentPage
     {
@@ -10,7 +9,7 @@ namespace StudyMind
 
         private async void OnStartClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("StudyMind", "בואו נתחיל ללמוד!", "יאללה");
+            await Shell.Current.GoToAsync(nameof(SubjectsPage));
         }
     }
 }

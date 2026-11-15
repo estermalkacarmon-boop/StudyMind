@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudyMind.DashboardPage"
+    Title="מסך הבית"
+    BackgroundColor="#F4F5FA"
+    FlowDirection="RightToLeft">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="22,25" Spacing="22">
+
+            <!-- כותרת וברכה -->
+            <Grid ColumnDefinitions="*,Auto">
+
+                <VerticalStackLayout Spacing="5">
+                    <Label
+                        Text="StudyMind"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        TextColor="#5266D5"/>
+
+                    <Label
+                        Text="היי, איזה כיף שחזרת!"
+                        FontSize="25"
+                        FontAttributes="Bold"
+                        TextColor="#293477"/>
+
+                    <Label
+                        Text="היום הוא הזדמנות להתקדם קצת יותר"
+                        FontSize="13"
+                        TextColor="#858BA1"/>
+                </VerticalStackLayout>
+
+                <Border
+                    Grid.Column="1"
+                    WidthRequest="52"
+                    HeightRequest="52"
+                    BackgroundColor="#E7EAFE"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 17"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Text="S"
+                        FontSize="27"
+                        FontAttributes="Bold"
+                        TextColor="#5266D5"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+
+            <!-- כרטיס סיכום יומי -->
+            <Border
+                BackgroundColor="#5266D5"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 25"
+                Padding="21">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label
+                        Text="היעד היומי שלך"
+                        FontSize="14"
+                        TextColor="#E5E8FF"
+                        FontAttributes="Bold"/>
+
+                    <Grid ColumnDefinitions="*,Auto">
+
+                        <VerticalStackLayout Spacing="4">
+                            <Label
+                                Text="2 מתוך 4 שעות"
+                                FontSize="25"
+                                FontAttributes="Bold"
+                                TextColor="White"/>
+
+                            <Label
+                                Text="כל צעד קטן מקרב אותך למטרה"
+                                FontSize="12"
+                                TextColor="#E5E8FF"/>
+                        </VerticalStackLayout>
+
+                        <Border
+                            Grid.Column="1"
+                            WidthRequest="65"
+                            HeightRequest="65"
+                            BackgroundColor="#7182E2"
+                            Stroke="#AAB4FF"
+                            StrokeThickness="2"
+                            StrokeShape="RoundRectangle 33"
+                            VerticalOptions="Center">
+
+                            <Label
+                                Text="50%"
+                                FontSize="17"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        </Border>
+                    </Grid>
+
+                    <ProgressBar
+                        Progress="0.5"
+                        ProgressColor="White"
+                        BackgroundColor="#8997E9"
+                        HeightRequest="8"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- נתונים מהירים -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="13">
+
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EAECF5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="16">
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label
+                            Text="משימות להיום"
+                            FontSize="13"
+                            TextColor="#858BA1"/>
+
+                        <Label
+                            Text="4"
+                            FontSize="29"
+                            FontAttributes="Bold"
+                            TextColor="#293477"/>
+
+                        <Label
+                            Text="משימות מתוכננות"
+                            FontSize="11"
+                            TextColor="#A0A4B6"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    Grid.Column="1"
+                    BackgroundColor="White"
+                    Stroke="#EAECF5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="16">
+
+                    <VerticalStackLayout Spacing="7">
+                        <Label
+                            Text="זמן למידה"
+                            FontSize="13"
+                            TextColor="#858BA1"/>
+
+                        <Label
+                            Text="120"
+                            FontSize="29"
+                            FontAttributes="Bold"
+                            TextColor="#293477"/>
+
+                        <Label
+                            Text="דקות למידה"
+                            FontSize="11"
+                            TextColor="#A0A4B6"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+            <!-- המשימות של היום -->
+            <VerticalStackLayout Spacing="13">
+
+                <Grid ColumnDefinitions="*,Auto">
+                    <Label
+                        Text="המשימות שלי"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#293477"/>
+
+                    <Label
+                        Grid.Column="1"
+                        Text="היום"
+                        FontSize="13"
+                        TextColor="#5266D5"
+                        VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- משימה 1 -->
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EAECF5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="15">
+
+                    <Grid ColumnDefinitions="5,*" ColumnSpacing="13">
+
+                        <BoxView
+                            BackgroundColor="#5266D5"
+                            CornerRadius="3"/>
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Spacing="5">
+
+                            <Label
+                                Text="מתמטיקה"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#343A59"/>
+
+                            <Label
+                                Text="תרגול פונקציות"
+                                FontSize="13"
+                                TextColor="#858BA1"/>
+
+                            <Label
+                                Text="45 דקות"
+                                FontSize="11"
+                                TextColor="#5266D5"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- משימה 2 -->
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EAECF5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="15">
+
+                    <Grid ColumnDefinitions="5,*" ColumnSpacing="13">
+
+                        <BoxView
+                            BackgroundColor="#8B72D6"
+                            CornerRadius="3"/>
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Spacing="5">
+
+                            <Label
+                                Text="אנגלית"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#343A59"/>
+
+                            <Label
+                                Text="קריאה והבנת הנקרא"
+                                FontSize="13"
+                                TextColor="#858BA1"/>
+
+                            <Label
+                                Text="30 דקות"
+                                FontSize="11"
+                                TextColor="#8B72D6"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- משימה 3 -->
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EAECF5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="15">
+
+                    <Grid ColumnDefinitions="5,*" ColumnSpacing="13">
+
+                        <BoxView
+                            BackgroundColor="#399A8B"
+                            CornerRadius="3"/>
+
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Spacing="5">
+
+                            <Label
+                                Text="היסטוריה"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="#343A59"/>
+
+                            <Label
+                                Text="חזרה על החומר"
+                                FontSize="13"
+                                TextColor="#858BA1"/>
+
+                            <Label
+                                Text="45 דקות"
+                                FontSize="11"
+                                TextColor="#399A8B"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+            </VerticalStackLayout>
+
+            <!-- אזור התקדמות -->
+            <Border
+                BackgroundColor="White"
+                Stroke="#EAECF5"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 20"
+                Padding="18">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label
+                        Text="ההתקדמות שלך"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#293477"/>
+
+                    <Label
+                        Text="את בדרך הנכונה! המשיכי להתמיד ולבנות הרגלי למידה טובים."
+                        FontSize="13"
+                        TextColor="#858BA1"
+                        LineHeight="1.3"/>
+
+                    <ProgressBar
+                        Progress="0.65"
+                        ProgressColor="#5266D5"
+                        BackgroundColor="#E9EBF5"
+                        HeightRequest="9"/>
+
+                    <Label
+                        Text="65% מהיעד השבועי"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="#5266D5"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Label
+                Text="StudyMind  •  לומדים חכם יותר"
+                FontSize="12"
+                TextColor="#A0A4B6"
+                HorizontalOptions="Center"
+                Margin="0,5,0,12"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

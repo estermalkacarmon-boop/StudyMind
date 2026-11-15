@@ -1,47 +1,231 @@
-﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StudyMind.MainPage"
-              BackgroundColor="#F4F5FA">
-
-
-
-
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudyMind.MainPage"
+    BackgroundColor="#F4F5FA"
+    FlowDirection="RightToLeft">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="25"
-            Spacing="20"
-            VerticalOptions="Center">
+        <Grid Padding="24,30">
 
-            <Label
-                Text="StudyMind"
-                FontSize="34"
-                FontAttributes="Bold"
-                TextColor="#3446A5"
-                HorizontalOptions="Center"/>
+            <VerticalStackLayout
+                Spacing="25"
+                VerticalOptions="Center">
 
-            <Label
-                Text="לומדים חכם יותר"
-                FontSize="20"
-                HorizontalOptions="Center"
-                TextColor="#444444"/>
+                <!-- לוגו ושם האפליקציה -->
+                <VerticalStackLayout
+                    Spacing="8"
+                    HorizontalOptions="Center">
 
-            <Label
-                Text="ברוכים הבאים לעוזר הלמידה האישי שלכם!"
-                FontSize="16"
-                HorizontalOptions="Center"
-                TextColor="#666666"
-                HorizontalTextAlignment="Center"/>
+                    <Border
+                        WidthRequest="76"
+                        HeightRequest="76"
+                        BackgroundColor="#E7EAFE"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 24"
+                        HorizontalOptions="Center">
 
-            <Button
-                Text="בואו נתחיל ללמוד"
-                Clicked="OnStartClicked"
-                BackgroundColor="#5266D5"
-                TextColor="White"
-                CornerRadius="15"
-                HeightRequest="55"/>
+                        <Label
+                            Text="S"
+                            FontSize="43"
+                            FontAttributes="Bold"
+                            TextColor="#5266D5"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </Border>
 
-        </VerticalStackLayout>
+                    <Label
+                        Text="StudyMind"
+                        FontSize="32"
+                        FontAttributes="Bold"
+                        TextColor="#293477"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        Text="YOUR PERSONAL STUDY SPACE"
+                        FontSize="10"
+                        CharacterSpacing="2"
+                        FontAttributes="Bold"
+                        TextColor="#858CB5"
+                        HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <!-- כרטיס פתיחה -->
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EAECF5"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 28"
+                    Padding="24">
+
+                    <VerticalStackLayout Spacing="20">
+
+                        <Border
+                            BackgroundColor="#EEF0FF"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            Padding="12,7"
+                            HorizontalOptions="Start">
+
+                            <Label
+                                Text="הלמידה שלך, בדרך שלך"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="#5266D5"/>
+                        </Border>
+
+                        <VerticalStackLayout Spacing="10">
+
+                            <Label
+                                Text="מוכנים ללמוד&#10;חכם יותר?"
+                                FontSize="34"
+                                FontAttributes="Bold"
+                                TextColor="#293477"
+                                LineHeight="1.15"/>
+
+                            <Label
+                                Text="כל מה שצריך כדי להפוך את הלמידה שלך למסודרת, אישית ויעילה יותר — במקום אחד."
+                                FontSize="15"
+                                TextColor="#777D94"
+                                LineHeight="1.4"/>
+                        </VerticalStackLayout>
+
+                        <!-- שלושה יתרונות -->
+                        <VerticalStackLayout Spacing="13">
+
+                            <Grid ColumnDefinitions="42,*" ColumnSpacing="12">
+                                <Border
+                                    BackgroundColor="#EEF0FF"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 13"
+                                    WidthRequest="42"
+                                    HeightRequest="42">
+
+                                    <Label
+                                        Text="✓"
+                                        FontSize="22"
+                                        FontAttributes="Bold"
+                                        TextColor="#5266D5"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+                                </Border>
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Spacing="2">
+
+                                    <Label
+                                        Text="למידה מותאמת אישית"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="#343A59"/>
+
+                                    <Label
+                                        Text="לפי המקצועות וההעדפות שלך"
+                                        FontSize="12"
+                                        TextColor="#9297AA"/>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <Grid ColumnDefinitions="42,*" ColumnSpacing="12">
+                                <Border
+                                    BackgroundColor="#F0EBFF"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 13"
+                                    WidthRequest="42"
+                                    HeightRequest="42">
+
+                                    <Label
+                                        Text="◷"
+                                        FontSize="22"
+                                        TextColor="#8064C8"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+                                </Border>
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Spacing="2">
+
+                                    <Label
+                                        Text="ניהול זמן חכם"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="#343A59"/>
+
+                                    <Label
+                                        Text="תכנון זמני למידה והפסקות"
+                                        FontSize="12"
+                                        TextColor="#9297AA"/>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                            <Grid ColumnDefinitions="42,*" ColumnSpacing="12">
+                                <Border
+                                    BackgroundColor="#EAF5F4"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 13"
+                                    WidthRequest="42"
+                                    HeightRequest="42">
+
+                                    <Label
+                                        Text="↗"
+                                        FontSize="23"
+                                        FontAttributes="Bold"
+                                        TextColor="#399A8B"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+                                </Border>
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Spacing="2">
+
+                                    <Label
+                                        Text="מעקב אחר ההתקדמות"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        TextColor="#343A59"/>
+
+                                    <Label
+                                        Text="לראות את הדרך ואת ההישגים שלך"
+                                        FontSize="12"
+                                        TextColor="#9297AA"/>
+                                </VerticalStackLayout>
+                            </Grid>
+
+                        </VerticalStackLayout>
+
+                        <Button
+                            Text="בואו נתחיל ללמוד"
+                            Clicked="OnStartClicked"
+                            BackgroundColor="#5266D5"
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            CornerRadius="17"
+                            HeightRequest="58"/>
+
+                        <Label
+                            Text="הצעד הראשון ללמידה טובה יותר מתחיל כאן"
+                            FontSize="11"
+                            TextColor="#A0A4B6"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label
+                    Text="StudyMind  •  לומדים חכם יותר"
+                    FontSize="12"
+                    TextColor="#A0A4B6"
+                    HorizontalOptions="Center"/>
+
+            </VerticalStackLayout>
+        </Grid>
     </ScrollView>
-
 </ContentPage>
